@@ -1,0 +1,21 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "module": "es2015",
+    "target": "es5",
+    "noImplicitAny": false,
+    "sourceMap": false,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "lib": ["es2015", "dom"]
+  },
+  "include": [
+		"src/**/*"
+	],
+	"angularCompilerOptions": {
+		"genDir": "src/ngfactory",
+    "entryModule": "./src/app/app.server.module#AppServerModule",
+    "skipMetadataEmit" : false
+	}
+}
