@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import 'rxjs/add/operator/take';
+
 import { Api } from './api.service';
 
 @Component({
@@ -18,9 +20,13 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
 		// Using fetch()
-		// this.api.check('fetch').then(() => this.ssr = true);
+		this.api.check('fetch').take(1).subscribe(() => this.response());
 
 		// Using Http service
-		this.api.check('http').then(() => this.ssr = true);
+		// this.api.check('http').take(1).subscribe(() => this.response());
   }
+
+	response() {
+		this.ssr = true;
+	}
 }
